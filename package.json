@@ -1,0 +1,15 @@
+{
+  "name": "neillcities",
+  "private": true,
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.1"
+  },
+  "lint-staged": {
+    "*": "biome check --write --no-errors-on-unmatched"
+  }
+}
