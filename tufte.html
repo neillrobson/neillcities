@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeillCities</title>
+    <link href="/reset.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <section>
+      <h1>Markdown-It Tufte Demonstration</h1>
+      <p class="subtitle">With help from markdown-it-attrs</p>
+    </section>
+    <section>
+      <p>
+        <span class="newthought" id="emma-woodhouse"
+          ><a class="no-tufte-underline" href="#emma-woodhouse"></a>Emma
+          Woodhouse</span
+        >, handsome, clever, and rich, with a comfortable home and happy
+        disposition, seemed to unite some of the best blessings of existence.
+      </p>
+      <p>
+        Each “new thought” and second-level heading automatically gets a section
+        break and an ID for URL fragment linking.
+      </p>
+    </section>
+    <section>
+      <div class="section-link">
+        <a class="no-tufte-underline" href="#sidenotes-and-marginalia"></a>
+        <h2 id="sidenotes-and-marginalia">Sidenotes and Marginalia</h2>
+      </div>
+      <p>
+        Here’s where things really get exciting… Markdown footnotes<label
+          for="sn-foots"
+          class="margin-toggle sidenote-number"
+        ></label><input id="sn-foots" type="checkbox" class="margin-toggle">
+        <span class="sidenote"
+          ><a href="https://www.markdownguide.org/extended-syntax#footnotes"
+            >Footnotes</a
+          >
+          weren’t actually part of the original markdown spec, but they’ve
+          become a popular bolt-on.</span
+        >
+        are a convenient way to move digressions and asides out of the primary
+        flow of a document—but shoving them to the bottom of a long page is no
+        good, either.
+      </p>
+    </section>
+    <section>
+      <div class="section-link">
+        <a class="no-tufte-underline" href="#figures-and-captions"></a>
+        <h2 id="figures-and-captions">Figures and Captions</h2>
+      </div>
+      <p>
+        An image on its own line gets special rendering in a
+        <code>figure</code>
+        tag.
+      </p>
+      <figure>
+        <img
+          src="tree.jpg"
+          alt="tree in a field"
+          title="I send my friends pictures of the most amazing trees"
+        >
+        <figcaption>
+          I send my friends pictures of the most amazing trees
+        </figcaption>
+      </figure>
+      <p>
+        Notice how the <code>figcaption</code> is populated from the image
+        title. Also note the different positionings of the caption based on the
+        viewport size.
+      </p>
+      <p>
+        A full-width image can be achieved with the
+        <code>.fullwidth</code>
+        class on the figure tag, easily added with the markdown-it-attrs plugin:
+      </p>
+      <figure class="fullwidth">
+        <img
+          src="tree.jpg"
+          alt="tree in a field"
+          title="Are you obsessed with all my forest expertise?"
+        >
+        <figcaption>Are you obsessed with all my forest expertise?</figcaption>
+      </figure>
+    </section>
+  </body>
+</html>
