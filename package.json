@@ -1,16 +1,26 @@
 {
   "name": "neillcities",
   "private": true,
+  "source": "src/**/*.html",
   "scripts": {
-    "prepare": "husky"
+    "build": "rimraf dist && parcel build",
+    "prepare": "husky",
+    "start": "parcel"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.14",
     "husky": "^9.1.7",
     "lint-staged": "^17.5.1",
+    "parcel": "^2.16.4",
     "rimraf": "^6.1.3"
   },
   "lint-staged": {
     "*": "biome check --write --no-errors-on-unmatched"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "@swc/core@1.16.2": true,
+    "lmdb@2.8.5": true,
+    "msgpackr-extract@3.0.4": true
   }
 }
