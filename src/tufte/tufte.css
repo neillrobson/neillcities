@@ -191,22 +191,33 @@ img {
   max-width: 100%;
 }
 
+.sidenote-wrapper {
+  anchor-scope: --label;
+}
+
 .sidenote,
 .marginnote {
-  float: right;
+  /* float: right;
   clear: right;
   margin-right: -60%;
-  width: 50%;
+  width: 50%; */
+
   margin-top: 0.3rem;
   margin-bottom: 0;
   font-size: 1.1rem;
   line-height: 1.3;
-  vertical-align: baseline;
-  position: relative;
+
+  anchor-name: --note;
+
+  position: absolute;
+  position-anchor: --label;
+  top: max(anchor(top), anchor(--note bottom, 0) + 0.5em);
+  left: 65%;
 }
 
 .sidenote-number {
   counter-increment: sidenote-counter;
+  anchor-name: --label;
 }
 
 .sidenote-number:after,
