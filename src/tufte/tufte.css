@@ -94,6 +94,27 @@ p {
   vertical-align: baseline;
 }
 
+blockquote {
+  font-size: 1.4rem;
+}
+
+blockquote p {
+  width: 55%;
+  margin-right: 40px;
+}
+
+blockquote footer {
+  width: 55%;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+section > p,
+section > footer,
+section > table {
+  width: 55%;
+}
+
 /* Chapter Epigraphs */
 div.epigraph {
   margin: 5em 0;
@@ -117,27 +138,6 @@ div.epigraph > blockquote > footer > cite {
   font-style: italic;
 }
 /* end chapter epigraphs styles */
-
-blockquote {
-  font-size: 1.4rem;
-}
-
-blockquote p {
-  width: 55%;
-  margin-right: 40px;
-}
-
-blockquote footer {
-  width: 55%;
-  font-size: 1.1rem;
-  text-align: right;
-}
-
-section > p,
-section > footer,
-section > table {
-  width: 55%;
-}
 
 /* 50 + 5 == 55, to be the same width as paragraph */
 section > dl,
@@ -258,19 +258,10 @@ pre > code {
   -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
 }
 
-.sans > code {
-  font-size: 1.2rem;
-}
-
 h1 > code,
 h2 > code,
 h3 > code {
   font-size: 0.8em;
-}
-
-.marginnote > code,
-.sidenote > code {
-  font-size: 1rem;
 }
 
 pre > code {
@@ -279,6 +270,15 @@ pre > code {
   margin-left: 2.5%;
   overflow-x: auto;
   display: block;
+}
+
+.sans > code {
+  font-size: 1.2rem;
+}
+
+.marginnote > code,
+.sidenote > code {
+  font-size: 1rem;
 }
 
 pre.fullwidth > code {
@@ -328,6 +328,11 @@ label.margin-toggle:not(.sidenote-number) {
     width: 84%;
     padding-left: 8%;
     padding-right: 8%;
+  }
+
+  div.table-wrapper,
+  table {
+    width: 85%;
   }
 
   hr,
@@ -390,11 +395,6 @@ label.margin-toggle:not(.sidenote-number) {
 
   label {
     cursor: pointer;
-  }
-
-  div.table-wrapper,
-  table {
-    width: 85%;
   }
 
   img {
