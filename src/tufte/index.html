@@ -4,124 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeillCities</title>
-    <link href="../reset.css" rel="stylesheet" type="text/css" media="all">
-    <link href="tufte.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script
+      src="https://cdn.jsdelivr.net/npm/markdown-it@15.0.2/dist/browser/markdown-it.umd.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/markdown-it-footnote@4.0.0/dist/markdown-it-footnote.min.js"
+    ></script>
+    <script
+      src="https://unpkg.com/markdown-it-attrs/markdown-it-attrs.browser.js"
+    ></script>
   </head>
   <body>
-    <section>
-      <h1>Markdown-It Tufte Demonstration</h1>
-      <p class="subtitle">With help from markdown-it-attrs</p>
-    </section>
-    <section>
-      <p>
-        <span class="newthought" id="emma-woodhouse"
-          ><a class="no-tufte-underline" href="#emma-woodhouse"></a>Emma
-          Woodhouse</span
-        >, handsome, clever, and rich, with a comfortable home and happy
-        disposition, seemed to unite some of the best blessings of existence.
-      </p>
-      <p>
-        Each “new thought” and second-level heading automatically gets a section
-        break and an ID for URL fragment linking.
-      </p>
-    </section>
-    <section>
-      <div class="section-link">
-        <a class="no-tufte-underline" href="#sidenotes-and-marginalia"></a>
-        <h2 id="sidenotes-and-marginalia">Sidenotes and Marginalia</h2>
+    <div class="main">
+      <div class="header">
+        <h1>markdown-it</h1>
       </div>
-      <p>
-        Here’s where things really get exciting… Markdown footnotes<span
-          class="sidenote-wrapper"
-          ><label for="sn-foots" class="margin-toggle sidenote-number"></label>
-          <input id="sn-foots" type="checkbox" class="margin-toggle">
-          <span class="sidenote"
-            ><a href="https://www.markdownguide.org/extended-syntax#footnotes"
-              >Footnotes</a
-            >
-            weren’t actually part of the original markdown spec, but they’ve
-            become a popular bolt-on.</span
-          ></span
-        >
-        are a convenient way to move digressions and asides out of the primary
-        flow of a document—but shoving them to the bottom of a long page is no
-        good, either.
-      </p>
-      <p>
-        By moving them to the side<span class="sidenote-wrapper"
-          ><label for="sn-right" class="margin-toggle sidenote-number"></label>
-          <input id="sn-right" type="checkbox" class="margin-toggle">
-          <span class="sidenote"
-            >The right-hand side, specifically. Note that, on sufficiently small
-            viewports, the sidenotes become invisible by default: you'll need to
-            click (or tap) on the reference number to get them to appear.</span
-          ></span
-        >
-        of the text, you get to view the note in the immediate context<span
-          class="sidenote-wrapper"
-          ><label for="sn-pun" class="margin-toggle sidenote-number"></label>
-          <input id="sn-pun" type="checkbox" class="margin-toggle">
-          <span class="sidenote">No pun intended!</span></span
-        >
-        of the document.
-      </p>
-      <p>
-        By moving them to the side<span class="sidenote-wrapper"
-          ><label for="sn-right" class="margin-toggle sidenote-number"></label>
-          <input id="sn-right" type="checkbox" class="margin-toggle">
-          <span class="sidenote"
-            >The right-hand side, specifically. Note that, on sufficiently small
-            viewports, the sidenotes become invisible by default: you'll need to
-            click (or tap) on the reference number to get them to appear.</span
-          ></span
-        >
-        of the text, you get to view the note in the immediate context<span
-          class="sidenote-wrapper"
-          ><label for="sn-pun" class="margin-toggle sidenote-number"></label>
-          <input id="sn-pun" type="checkbox" class="margin-toggle">
-          <span class="sidenote">No pun intended!</span></span
-        >
-        of the document.
-      </p>
-    </section>
-    <section>
-      <div class="section-link">
-        <a class="no-tufte-underline" href="#figures-and-captions"></a>
-        <h2 id="figures-and-captions">Figures and Captions</h2>
+      <div class="content">
+        <p>
+          This is a sandbox for experimenting with markdown-it and footnotes.
+        </p>
+        <p>
+          Simply write in the text box below, then click away, and the text will
+          be rendered.
+        </p>
+        <textarea id="inputtext" class="inputtext">
+# Markdown-It Tufte Demonstration
+
+With help from markdown-it-attrs {.subtitle}
+
+^^Emma Woodhouse^^, handsome, clever, and rich, with a comfortable home and happy disposition, seemed to unite some of the best blessings of existence.
+
+Each "new thought" and second-level heading automatically gets a section break and an ID for URL fragment linking.
+
+## Sidenotes and Marginalia
+
+Here's where things really get exciting... Markdown footnotes[^foots] are a convenient way to move digressions and asides out of the primary flow of a document---but shoving them to the bottom of a long page is no good, either.
+
+[^foots]: [Footnotes](https://www.markdownguide.org/extended-syntax#footnotes) weren't actually part of the original markdown spec, but they've become a popular bolt-on.
+
+## Figures and Captions
+
+An image on its own line gets special rendering in a `figure` tag.
+
+![tree in a field](tree.jpg "I send my friends pictures of the most amazing trees")
+
+Notice how the `figcaption` is populated from the image title. Also note the different positionings of the caption based on the viewport size.
+
+A full-width image can be achieved with the `.fullwidth` class on the figure tag, easily added with the markdown-it-attrs plugin:
+
+![tree in a field](tree.jpg "Are you obsessed with all my forest expertise?"){.fullwidth}
+        </textarea>
+        <iframe
+          title="content"
+          id="renderer"
+          class="rendered"
+          src="frame.html"
+        ></iframe>
       </div>
-      <p>
-        An image on its own line gets special rendering in a
-        <code>figure</code>
-        tag.
-      </p>
-      <figure>
-        <img
-          src="tree.jpg"
-          alt="tree in a field"
-          title="I send my friends pictures of the most amazing trees"
-        >
-        <figcaption>
-          I send my friends pictures of the most amazing trees
-        </figcaption>
-      </figure>
-      <p>
-        Notice how the <code>figcaption</code> is populated from the image
-        title. Also note the different positionings of the caption based on the
-        viewport size.
-      </p>
-      <p>
-        A full-width image can be achieved with the
-        <code>.fullwidth</code>
-        class on the figure tag, easily added with the markdown-it-attrs plugin:
-      </p>
-      <figure class="fullwidth">
-        <img
-          src="tree.jpg"
-          alt="tree in a field"
-          title="Are you obsessed with all my forest expertise?"
-        >
-        <figcaption>Are you obsessed with all my forest expertise?</figcaption>
-      </figure>
-    </section>
+    </div>
+    <noscript>You need to enable JavaScript to run this app!</noscript>
+    <script>
+    // get elements
+    var inputText = document.getElementById("inputtext");
+    var frame = document.getElementById("renderer");
+
+    function handleChange(e) {
+      const text = window
+        .markdownit({ typographer: true })
+        .use(window.markdownitFootnote)
+        .use(window.markdownItAttrs)
+        .render(e.target.value);
+
+      frame.contentWindow.document.body.innerHTML = text;
+    }
+
+    frame.onload = () => {
+      inputText.onchange = handleChange;
+      // trigger change handler for first render
+      const event = new Event("change");
+      inputText.dispatchEvent(event);
+    };
+    </script>
   </body>
 </html>
